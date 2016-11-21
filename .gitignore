@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.userosscache
+*.sln
 *.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
@@ -21,6 +22,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+[Tt]emp/
+[Ll]ibrary/
 
 # Visual Studio 2015 cache/options directory
 .vs/
