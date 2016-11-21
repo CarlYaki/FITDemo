@@ -16,7 +16,7 @@ public class ModelControl : MonoBehaviour {
         init();
 	}
 
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0, 0, 0);
     private bool[] movingFlag = { false, false, false, false, false, false };
     private const int movingFrames = 50;
     private int tick;
@@ -33,7 +33,7 @@ public class ModelControl : MonoBehaviour {
             {
                 if (movingFlag[i])
                 {
-                    GameObject.Find("root").transform.Find((i + 1).ToString()).position = targetPoint[i];
+                    GameObject.Find("root").transform.Find((i + 1).ToString()).position = targetPoint[i] + offset;
                     movingFlag[i] = false;
                 }
             }
@@ -84,6 +84,22 @@ public class ModelControl : MonoBehaviour {
         for (int i = 0; i < 6; ++i)
         {
             GameObject.Find("root").transform.Find((i + 1).ToString()).gameObject.SetActive(true);
+        }
+    }
+    public void modelUp()
+    {
+        offset += new Vector3(0, 0.1f, 0);
+        for (int i = 0; i < 6; ++i)
+        {
+            GameObject.Find("root").transform.Find((i + 1).ToString()).transform.position += new Vector3(0, 0.1f, 0);
+        }
+    }
+    public void modelDown()
+    {
+        offset -= new Vector3(0, 0.1f, 0);
+        for (int i = 0; i < 6; ++i)
+        {
+            GameObject.Find("root").transform.Find((i + 1).ToString()).transform.position -= new Vector3(0, 0.1f, 0);
         }
     }
 }

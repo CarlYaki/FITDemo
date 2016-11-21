@@ -9,7 +9,15 @@ public class ButtonClick : MonoBehaviour {
     public void Click()
     {
         Debug.Log(this.name);
-        switch (modelStatus.status)
+        if (this.name == "modelUp")
+        {
+            GameObject.Find("root").GetComponent<ModelControl>().modelUp();
+        }
+        else if (this.name == "modelDown")
+        {
+            GameObject.Find("root").GetComponent<ModelControl>().modelDown();
+        }
+        else switch (modelStatus.status)
         {
             case Status.merged:
                 if (this.name == "split")
