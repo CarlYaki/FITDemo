@@ -4,7 +4,6 @@ using System;
 
 public class ButtonClick : MonoBehaviour {
 
-    private int test_git;
     private int id;
     public void Click()
     {
